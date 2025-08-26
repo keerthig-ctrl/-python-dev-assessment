@@ -1,3 +1,10 @@
+from typing import List, Optional
+import requests
+from requests.exceptions import RequestException
+
+USERS_URL = "https://jsonplaceholder.typicode.com/users"
+
+
 def fetch_and_display_users(num_users:int)
     Optional[list[dict]]
 if not isinstance(num_users,int) or num_users <=0:
@@ -25,8 +32,9 @@ for i,user in enumerate(users[:num_users]):
     except(KeyError,TypeError):
         print(f"Warning: user at index {i} missing expected fields: {user}")
         continue
-    print(f:{i+1}. {name} --{email} --{city}")
-          return results
+    print(f":{i+1} {name} {email} {city}"):
+    results.append(user)
+    
             
 if__name__ == "__main__":
 print("---fetch 3 users ---")
